@@ -10,8 +10,9 @@
   --ink-2: #6F4627;
   --brown: #8B5E3C;
   --border: #E7E5E4;
-  --sky: #BBE0F2;
-  --sky-deep: #A3D4EC;
+  /* app's happy sky as it actually renders on screen (P3 #BBE0F2 ≈ sRGB #C3DFF1) */
+  --sky: #C3DFF1;
+  --sky-deep: #ABD3EB;
   --grass-1: #8ED058;
   --grass-2: #6FBF44;
   --grass-3: #57A836;

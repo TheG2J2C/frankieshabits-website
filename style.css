@@ -76,11 +76,12 @@ a:focus-visible, button:focus-visible {
 
 /* ---------- header ---------- */
 
-/* header wears the happy sky as it renders on-screen in the app (#C3DFF1, user-sampled) */
+/* header wears the happy sky as it renders on-screen in the app (#C3DFF1, user-sampled).
+   Same in BOTH themes, so text colours are pinned dark to stay readable. */
 .site-header { background: #C3DFF1; }
-@media (prefers-color-scheme: dark) {
-  .site-header { background: var(--sky); }
-}
+.site-header .wordmark { color: #2C160E; }
+.site-header .site-nav a { color: #6F4627; }
+.site-header .site-nav a:hover { color: #8B5E3C; }
 .site-header .wrap {
   display: flex;
   align-items: center;

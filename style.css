@@ -76,21 +76,14 @@ a:focus-visible, button:focus-visible {
 
 /* ---------- header ---------- */
 
-.site-header { background: transparent; }
+/* header wears the happy sky — blends straight into the hero on the landing page */
+.site-header { background: var(--sky); }
 .site-header .wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-top: 20px;
   padding-bottom: 20px;
-}
-/* landing page: header floats over the hero sky — no bar */
-.site-header.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
 }
 .wordmark {
   display: flex;
@@ -127,7 +120,7 @@ a:focus-visible, button:focus-visible {
   grid-template-columns: 1.1fr 0.9fr;
   gap: 40px;
   align-items: center;
-  padding-top: 132px;
+  padding-top: 56px;
   padding-bottom: 24px;
   position: relative;
   z-index: 2;
@@ -476,7 +469,7 @@ a:focus-visible, button:focus-visible {
   .site-header .wrap { flex-wrap: wrap; gap: 6px 16px; }
   .wordmark img { width: 42px; }
   .wordmark span { font-size: 23px; }
-  .hero .wrap { grid-template-columns: 1fr; padding-top: 112px; }
+  .hero .wrap { grid-template-columns: 1fr; padding-top: 40px; }
   .hero .phone { transform: none; margin-top: 8px; }
   .steps { grid-template-columns: 1fr; }
   .adopt ul { grid-template-columns: 1fr; }

@@ -152,18 +152,13 @@ a:focus-visible, button:focus-visible {
   font-weight: 600;
   font-size: 15px;
 }
-/* mini app icon — Frankie head on the icon's sky-blue tile */
+/* the real compiled app icon, straight from the built app bundle */
 .pill-icon {
   width: 28px;
   height: 28px;
   border-radius: 8px;
-  background: #C2DFF0;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
   flex-shrink: 0;
 }
-.pill-icon img { width: 19px; height: auto; transform: translateY(1px); }
 @media (prefers-color-scheme: dark) {
   .pill { background: var(--card); color: var(--ink); border: 1px solid var(--border); }
 }

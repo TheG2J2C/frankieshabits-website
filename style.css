@@ -154,9 +154,9 @@ a:focus-visible, button:focus-visible {
 }
 /* the real compiled app icon, straight from the built app bundle */
 .pill-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
   flex-shrink: 0;
 }
 @media (prefers-color-scheme: dark) {

@@ -173,6 +173,35 @@ a:focus-visible, button:focus-visible {
 }
 .hero .phone { transform: rotate(1.5deg); }
 
+/* scroll cue — sits on the grass, bobbing until you follow it */
+.scroll-cue {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  z-index: 20;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #FFFCF5;
+  color: #6F4627;
+  border: 1px solid #E7E5E4;
+  box-shadow: 0 6px 18px rgba(20, 30, 10, 0.30);
+  display: grid;
+  place-items: center;
+  animation: bob 1.8s ease-in-out infinite;
+  transition: opacity 0.4s ease;
+}
+.scroll-cue:hover { color: #2C160E; }
+.scroll-cue.gone { opacity: 0; pointer-events: none; }
+@keyframes bob {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(7px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue { animation: none; }
+}
+
 /* rolling hills — same flat-vector world as the Owner's Card */
 .hills { display: block; width: 100%; margin-top: -8vw; position: relative; z-index: 1; }
 .hills path.h1 { fill: var(--grass-1); }
@@ -269,6 +298,31 @@ a:focus-visible, button:focus-visible {
   line-height: 1.45;
 }
 .shot figcaption strong { color: var(--ink); display: block; font-size: 15px; }
+
+/* strikes — the stakes, in the Owner's Card's own language */
+.strikes { padding: 72px 0 88px; text-align: center; }
+.strikes .wrap { max-width: 620px; }
+.strikes h2 {
+  font-family: var(--display);
+  font-weight: 620;
+  font-size: clamp(26px, 3.6vw, 38px);
+  margin: 10px 0 14px;
+}
+.strikes p:not(.eyebrow) { color: var(--ink-2); font-size: 17px; }
+.strike-row { display: flex; gap: 14px; justify-content: center; margin-bottom: 22px; }
+.strike-x {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  color: #A4000E;
+  font-weight: 700;
+  font-size: 20px;
+}
+.strike-x.final { background: #A4000E; border-color: #A4000E; color: #FFF8F0; }
 
 /* adoption band */
 .adopt { background: var(--night); color: #F3E9DF; }

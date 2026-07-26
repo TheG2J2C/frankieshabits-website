@@ -100,7 +100,14 @@
         <h2 id="world-title">Small dog. Fully furnished life.</h2>
       </div>
     </div>
-    <div class="shelf" tabindex="0" aria-label="App screenshots, scroll sideways">
+    <div class="shelf-zone">
+      <button class="shelf-btn prev" type="button" aria-label="Previous screenshots" disabled>
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 4l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="shelf-btn next" type="button" aria-label="More screenshots">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="shelf" tabindex="0" aria-label="App screenshots, scroll sideways">
       <figure class="shot">
         <div class="phone"><img src="assets/01-home-crown-grasshills.png" alt="Frankie's home screen with Body, Mind and Routine health rings and today's habit list" loading="lazy"></div>
         <figcaption><strong>One glance, whole day</strong>Frankie up top, your habits below, three rings keeping score.</figcaption>
@@ -133,6 +140,7 @@
         <div class="phone"><img src="assets/05-ownerscard-forest-trex-viking.png" alt="Owner's Card with Frankie in a viking helmet in a forest scene with an inflatable T-rex" loading="lazy"></div>
         <figcaption><strong>Yes, that's a viking helmet</strong>The wardrobe gets weird in the best way.</figcaption>
       </figure>
+      </div>
     </div>
   </section>
 
@@ -176,6 +184,22 @@
 </footer>
 
 <script>
+  var shelf = document.querySelector('.shelf');
+  var prev = document.querySelector('.shelf-btn.prev');
+  var next = document.querySelector('.shelf-btn.next');
+  var instant = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function page(dir) {
+    shelf.scrollBy({ left: dir * shelf.clientWidth * 0.8, behavior: instant ? 'auto' : 'smooth' });
+  }
+  prev.addEventListener('click', function () { page(-1); });
+  next.addEventListener('click', function () { page(1); });
+  function syncBtns() {
+    prev.disabled = shelf.scrollLeft < 10;
+    next.disabled = shelf.scrollLeft > shelf.scrollWidth - shelf.clientWidth - 10;
+  }
+  shelf.addEventListener('scroll', syncBtns, { passive: true });
+  syncBtns();
+
   var cue = document.querySelector('.scroll-cue');
   addEventListener('scroll', function () {
     cue.classList.toggle('gone', scrollY > 120);

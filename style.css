@@ -10,9 +10,8 @@
   --ink-2: #6F4627;
   --brown: #8B5E3C;
   --border: #E7E5E4;
-  /* app's happy sky as it actually renders on screen (P3 #BBE0F2 ≈ sRGB #C3DFF1) */
-  --sky: #C3DFF1;
-  --sky-deep: #ABD3EB;
+  --sky: #BBE0F2;
+  --sky-deep: #A3D4EC;
   --grass-1: #8ED058;
   --grass-2: #6FBF44;
   --grass-3: #57A836;
@@ -77,8 +76,11 @@ a:focus-visible, button:focus-visible {
 
 /* ---------- header ---------- */
 
-/* header wears the happy sky — blends straight into the hero on the landing page */
-.site-header { background: var(--sky); }
+/* header wears the happy sky as it renders on-screen in the app (#C3DFF1, user-sampled) */
+.site-header { background: #C3DFF1; }
+@media (prefers-color-scheme: dark) {
+  .site-header { background: var(--sky); }
+}
 .site-header .wrap {
   display: flex;
   align-items: center;

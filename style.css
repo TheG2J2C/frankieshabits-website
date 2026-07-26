@@ -429,6 +429,31 @@ a:focus-visible, button:focus-visible {
 }
 .page .card a { font-weight: 600; }
 
+/* guide-page figures — small phones floated beside their sections */
+.guide-fig {
+  float: right;
+  width: 172px;
+  margin: 6px 0 16px 26px;
+}
+.guide-fig .phone {
+  width: 100%;
+  border-radius: 26px;
+  padding: 7px;
+  box-shadow: 0 10px 24px rgba(44, 22, 14, 0.20);
+}
+.guide-fig .phone > img { border-radius: 20px; }
+.guide-fig figcaption {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--ink-2);
+  text-align: center;
+  line-height: 1.4;
+}
+.page h2 { clear: both; }
+@media (max-width: 560px) {
+  .guide-fig { float: none; width: 200px; margin: 18px auto; }
+}
+
 /* ---------- responsive ---------- */
 
 @media (max-width: 820px) {
